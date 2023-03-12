@@ -9,8 +9,14 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
+  $('.saveBtn').on('click', function () { 
+    var hour = $(this).closest('div').attr('id');
+    var memo = $(this).siblings('.description').val();
 
+    localStorage.setItem(hour, memo);
 
+    $('.notification').css("display", "block");
+  });
 
 
 
@@ -33,6 +39,6 @@ $(document).ready(function () {
 
 
   // TODO: Add code to display the current date in the header of the page.
-  $('#currentDay').text(dayjs().format('h:mmA, dddd, MMMM D, YYYY'))
+  $('#currentDay').text(dayjs().format('h:mmA, dddd, MMMM D, YYYY'));
 
 });
