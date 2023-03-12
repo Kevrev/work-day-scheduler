@@ -60,4 +60,6 @@ textarea {
 
 .notification {
   display: none;
+  padding-bottom: 12px;
+  font-size: 25px;
 }

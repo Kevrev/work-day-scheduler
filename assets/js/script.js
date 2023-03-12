@@ -16,6 +16,8 @@ $(document).ready(function () {
     localStorage.setItem(hour, memo);
 
     $('.notification').css("display", "block");
+
+    $('.notification').fadeOut(2300);
   });
 
 
