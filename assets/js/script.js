@@ -38,7 +38,7 @@ $(document).ready(function() {
   // current hour in 24-hour time?
   //
 
-  function blockColor() { 
+  function blockUpdater() { 
     var realHour = dayjs().hour();
 
     // Spliting number (hour) from ID
@@ -46,14 +46,32 @@ $(document).ready(function() {
       var currentBlock = parseInt($(this).attr('id').split('-')[1]);
 
       if (currentBlock < realHour) {
-
+        $(this).addClass('past');
+      } else if (currentBlock === realHour) {
+        $(this).addClass('present');
+        $(this).removeClass('past');
+      } else {
+        $(this).addClass('future');
+        $(this).remove('present');
+        $(this).removeClass('past');
       }
-
     });
-
-
-
   }
+
+  // Variable is set and static upon page load so previousHour is the page time we are leaving behind
+  let previousHour = dayjs().hour();
+
+  // Simplifiable but should be accurate to real world hour changes
+  setInterval(function() {
+    // current hour here is a more accurate representation of the time as it updates witht the interval
+    let currentHour = dayjs().hour();
+    if (currentHour !== previousHour) {
+      blockUpdater();
+      previousHour = currentHour;
+    }
+  // updates every 5 seconds
+  }, 5000); 
+
 
 
   // TODO: Add code to get any user input that was saved in localStorage and set
