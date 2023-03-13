@@ -6,6 +6,18 @@ $(document).ready(function() {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
+
+  // Puts localStorage data into its respective boxes upon page load
+   function loadLocalStorage() {
+      $('.time-block').each(function() {
+        var hour = $(this).attr('id');
+        var memo = localStorage.getItem(hour);
+        $(this).children('.description').val(memo);
+      });
+    }
+  
+  loadLocalStorage()
+    
   $('.saveBtn').on('click', function() { 
     var hour = $(this).closest('section').attr('id');
     var memo = $(this).siblings('.description').val();
@@ -62,17 +74,6 @@ $(document).ready(function() {
     }
   // updates every 5 seconds
   }, 5000); 
-
-  // Puts localStorage data into its respective boxes upon page load
-  $('#hour-9').children('.description').val(localStorage.getItem('hour-9'));
-  $('#hour-10').children('.description').val(localStorage.getItem('hour-10'));
-  $('#hour-11').children('.description').val(localStorage.getItem('hour-11'));
-  $('#hour-12').children('.description').val(localStorage.getItem('hour-12'));
-  $('#hour-13').children('.description').val(localStorage.getItem('hour-13'));
-  $('#hour-14').children('.description').val(localStorage.getItem('hour-14'));
-  $('#hour-15').children('.description').val(localStorage.getItem('hour-15'));
-  $('#hour-16').children('.description').val(localStorage.getItem('hour-16'));
-  $('#hour-17').children('.description').val(localStorage.getItem('hour-17'));
 
   // Todo: add clear button
   $('#clear-all').on('click', function() {
