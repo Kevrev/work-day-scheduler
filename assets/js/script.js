@@ -16,10 +16,19 @@ $(document).ready(function () {
     localStorage.setItem(hour, memo);
 
     $('.notification').css("display", "block");
-
     $('.notification').fadeOut(2300);
   });
 
+  // Testing save all button
+  $('.saveAllBtn').on('click', function () { 
+    var hour = $(this).closest('div').attr('id');
+    var memo = $(this).siblings('.description').val();
+
+    localStorage.setItem(hour, memo);
+
+    $('.notification').css("display", "block");
+    $('.notification').fadeOut(2300);
+  });
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -36,7 +45,11 @@ $(document).ready(function () {
   // the values of the corresponding textarea elements. HINT: How can the id
   // attribute of each time-block be used to do this?
   //
-
+  $('#hour-9 textarea').val(localStorage.getItem('hour-9'));
+  $('#hour-10 textarea').val(localStorage.getItem('hour-10'));
+  $('#hour-11 textarea').val(localStorage.getItem('hour-11'));
+  $('#hour-12 textarea').val(localStorage.getItem('hour-12'));
+  $('#hour-13 textarea').val(localStorage.getItem('hour-13'));
 
 
 
