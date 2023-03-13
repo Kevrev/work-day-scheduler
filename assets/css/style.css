@@ -23,7 +23,7 @@ textarea {
 .save-block {
   padding-top: 12px;
   padding-bottom: 14px;
-  width: 300px;
+  width: 200px;
   float: right;
 }
 
@@ -50,6 +50,10 @@ textarea {
 .future {
   background-color: #77dd77;
   color: white;
+}
+
+.allBtn {
+  background-color: #06aed5;
 }
 
 .saveBtn {
