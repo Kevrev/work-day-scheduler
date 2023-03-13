@@ -52,11 +52,13 @@ $(document).ready(function() {
         $(this).removeClass('past');
       } else {
         $(this).addClass('future');
-        $(this).remove('present');
+        $(this).removeClass('present');
         $(this).removeClass('past');
       }
     });
   }
+
+  blockUpdater();
 
   // Variable is set and static upon page load so previousHour is the page time we are leaving behind
   let previousHour = dayjs().hour();
@@ -93,3 +95,5 @@ $(document).ready(function() {
   $('#currentDay').text(dayjs().format('h:mmA, dddd, MMMM D, YYYY'));
 
 });
+
+
