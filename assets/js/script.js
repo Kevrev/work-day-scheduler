@@ -72,12 +72,7 @@ $(document).ready(function() {
   // updates every 5 seconds
   }, 5000); 
 
-
-
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
+  // Puts localStorage data into its respective boxes upon page load
   $('#hour-9').children('.description').val(localStorage.getItem('hour-9'));
   $('#hour-10').children('.description').val(localStorage.getItem('hour-10'));
   $('#hour-11').children('.description').val(localStorage.getItem('hour-11'));
@@ -88,9 +83,13 @@ $(document).ready(function() {
   $('#hour-16').children('.description').val(localStorage.getItem('hour-16'));
   $('#hour-17').children('.description').val(localStorage.getItem('hour-17'));
 
+  // Todo: add clear button
+  $('#clear-all').on('click', function() {
+    localStorage.clear();
+    $('.description').val('')
+  });
 
-
-  // TODO: Add code to display the current date in the header of the page.
+  // Date and time
   $('#currentDay').text(dayjs().format('h:mmA, dddd, MMMM D, YYYY'));
 
 });

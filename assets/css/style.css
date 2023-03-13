@@ -20,12 +20,21 @@ textarea {
   border-radius: 15px;
 }
 
-.save-block {
+.saveall-block {
   padding-top: 12px;
   padding-bottom: 14px;
+  padding-right: 35px;
   width: 200px;
   float: right;
 }
+
+.clear-block {
+  padding-top: 12px;
+  padding-bottom: 14px;
+  width: 150px;
+  float: right;
+}
+
 
 .row {
   border-top: 1px solid white;
@@ -55,6 +64,7 @@ textarea {
 .allBtn {
   background-color: #06aed5;
 }
+
 
 .saveBtn {
   border-left: 1px solid black;
