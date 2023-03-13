@@ -1,7 +1,7 @@
 // Wrap all code that interacts with the DOM in a call to jQuery to ensure that
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
-$(document).ready(function () {
+$(document).ready(function() {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
   // local storage. HINT: What does `this` reference in the click listener
@@ -9,7 +9,7 @@ $(document).ready(function () {
   // time-block containing the button that was clicked? How might the id be
   // useful when saving the description in local storage?
   //
-  $('.saveBtn').on('click', function () { 
+  $('.saveBtn').on('click', function() { 
     var hour = $(this).closest('div').attr('id');
     var memo = $(this).siblings('.description').val();
 
@@ -20,15 +20,15 @@ $(document).ready(function () {
   });
 
   // Testing save all button
-  $('.saveAllBtn').on('click', function () { 
-    var hour = $(this).closest('div').attr('id');
-    var memo = $(this).siblings('.description').val();
+  // $('.saveAllBtn').on('click', function () { 
+  //   var hour = $(this).closest('div').attr('id');
+  //   var memo = $(this).siblings('.description').val();
 
-    localStorage.setItem(hour, memo);
+  //   localStorage.setItem(hour, memo);
 
-    $('.notification').css("display", "block");
-    $('.notification').fadeOut(2300);
-  });
+  //   $('.notification').css("display", "block");
+  //   $('.notification').fadeOut(2300);
+  // });
 
 
   // TODO: Add code to apply the past, present, or future class to each time
@@ -38,7 +38,22 @@ $(document).ready(function () {
   // current hour in 24-hour time?
   //
 
+  function blockColor() { 
+    var realHour = dayjs().hour();
 
+    // Spliting number (hour) from ID
+    $('.time-block').each(function() { 
+      var currentBlock = parseInt($(this).attr('id').split('-')[1]);
+
+      if (currentBlock < realHour) {
+
+      }
+
+    });
+
+
+
+  }
 
 
   // TODO: Add code to get any user input that was saved in localStorage and set
