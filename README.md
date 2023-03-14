@@ -20,4 +20,4 @@ https://github.com/Kevrev/work-day-scheduler
 
 ## Credits
 
-
+Jessica Wilkins from [freeCodeCamp](https://www.freecodecamp.org/news/javascript-split-a-string-string-to-array-js-method/) for her thorough explanation on the .split() function. It prevented me from having to find a more convoluted method or adding additional attributes to the time blocks that simply contained numbers (9, 10, 11, etc.). 
