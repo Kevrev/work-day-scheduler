@@ -8,7 +8,7 @@ This project was created to showcase knowledge of being able to incorporate and 
 
 Text may be typed in each box as a means to keep tasks organized for the current work day. The blue save icon on the right can be used to save the input for the corresponding box so that the data will be present on refresh. A clear all button is located at the bottom of the page that clears all tasks currently saved. This should mainly be used when a new work day begins or the current one ends and the tasks no longer need to be listed. Individual hours can be deleted by removing the text and saving the box.
 
-![Screenshot](./assets/kevrev.github.io_work-day-scheduler_.png)
+![Screenshot](./assets/screenshot.png)
 
 Link to the scheduler itself:
 
