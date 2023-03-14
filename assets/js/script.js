@@ -4,7 +4,7 @@ $(document).ready(function() {
   // Date and time
   $('#currentDay').text(dayjs().format('h:mmA, dddd, MMMM D, YYYY'));
 
-  // Puts localStorage data into its respective boxes upon page load
+  // Puts localStorage data into respective boxes upon page load
    function loadLocalStorage() {
       $('.time-block').each(function() {
         var hour = $(this).attr('id');
@@ -15,7 +15,7 @@ $(document).ready(function() {
   
   loadLocalStorage()
   
-  // Saves Data on click
+  // Saves Data on click for individual boxes
   $('.saveBtn').on('click', function() { 
     var hour = $(this).closest('section').attr('id');
     var memo = $(this).siblings('.description').val();
@@ -26,20 +26,8 @@ $(document).ready(function() {
     $('.notification').fadeOut(2300);
   });
 
-  // $('.allBtn').on('click', function() {
-  //   $('.time-block').each(function() {
-  //     var hour = $(this).closest('section').attr('id');
-  //     var memo = $(this).siblings('.description').val();
-  
-  //     if (memo !== undefined) {
-  //       localStorage.setItem(hour, memo);
-  //     }
-
-  //     $('.notification').css("display", "block");
-  //     $('.notification').fadeOut(2300);
-  //   });
-  // });
-
+  // Function goes through each box and adjusts their color by adding/removing classes (past, present, future) based on whether or not the value of the hour in their ID is <, >, or === to the current time realHour
+  // The hour each box represents is obtained by splitting the hour from the ID along the '-' (hour-i ==> ['hour', 'i'] with [1] grabbing the string of the number in the array)
   function blockUpdater() { 
     var realHour = dayjs().hour();
 
