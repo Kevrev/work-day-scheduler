@@ -23,6 +23,7 @@ $(document).ready(function() {
     localStorage.setItem(hour, memo);
 
     $('.notification').css("display", "block");
+    // fadeout 23 ms = 2.3 seconds
     $('.notification').fadeOut(2300);
   });
 
